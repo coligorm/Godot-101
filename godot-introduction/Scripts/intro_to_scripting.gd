@@ -10,6 +10,20 @@ func _ready():
 	print(move_speed)
 	print(game_over)
 	print(ability)
+	
+	score += 10
+	print(score)
+	score -= 2
+	print(score)
+	score *= 4
+	print(score)
+	score /= 2
+	print(score)
+	
+	ability += " attack"
+	print(ability)
+	
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
