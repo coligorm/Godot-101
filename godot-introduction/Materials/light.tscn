@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnfmvjwj2sgtp"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_xtqpl"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_6j0la"]
+
+[node name="Main" type="Node3D"]
+
+[node name="Floor" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.555962, 0, 0, 0, 0.06525766, 0, 0, 0, 7.76669, 0, 0, 0)
+mesh = SubResource("BoxMesh_xtqpl")
+
+[node name="Ball" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.59263897, 0)
+mesh = SubResource("SphereMesh_6j0la")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.39825282, 0.91727567, 0, -0.91727567, 0.39825282, -1.2847068, 3.5328212, 0)
+visible = false
+light_color = Color(0.82604915, 0.5669259, 0.29472366, 1)
+light_energy = 0.515
+shadow_enabled = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(2.5894942, 0, 0, 0, 1.0967082, 0, 0, 0, 2.8423734, 1.586024, 0.8303592, 1.2214332)
+light_color = Color(0.3993866, 0.7408102, 0.5016016, 1)
+light_energy = 5.0
+shadow_enabled = true
+omni_range = 3.7454455
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.49548897, 0.86861426, 0, -0.86861426, -0.49548897, 0.0159626, 2.9633706, -1.7457484)
+light_color = Color(0.62352943, 0.29803923, 1, 1)
+light_energy = 8.111
+shadow_enabled = true
+spot_range = 7.0296917
+spot_angle = 29.11425
