@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dgf4hue4a1ijy"]
+
+[ext_resource type="Texture2D" uid="uid://3v6tupnpj7f7" path="res://models/chest_gold/chest_texture.png" id="1_6na42"]
+
+[resource]
+albedo_texture = ExtResource("1_6na42")
