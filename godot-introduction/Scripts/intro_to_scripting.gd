@@ -23,8 +23,16 @@ func _ready():
 	ability += " attack"
 	print(ability)
 	
-	
+	if not game_over:
+		print("Go to menu")
+	else:
+		print("Keep playing")
 
+func _has_won(score : int) -> bool:
+	if score >= 100:
+		return true
+	else:
+		return false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta: float) -> void:
