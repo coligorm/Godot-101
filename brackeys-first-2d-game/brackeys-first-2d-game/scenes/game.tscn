@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://c6xbdxeuffleo"]
+[gd_scene load_steps=15 format=3 uid="uid://c6xbdxeuffleo"]
 
 [ext_resource type="PackedScene" uid="uid://u4bip1tmjwwt" path="res://scenes/player.tscn" id="1_uwrxv"]
 [ext_resource type="Texture2D" uid="uid://cmxeo2y2n3225" path="res://assets/sprites/world_tileset.png" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://brngxhhdhxqhp" path="res://scenes/killzone.tscn" id="3_iywne"]
 [ext_resource type="PackedScene" uid="uid://5qyd7kf480pd" path="res://scenes/platform.tscn" id="3_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://efek46goki1q" path="res://scenes/coin.tscn" id="4_lbhrr"]
 
@@ -163,6 +164,23 @@ texture = ExtResource("1_yqjtg")
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
+
+[sub_resource type="Animation" id="Animation_p57ef"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(81, 40)]
+}
+
 [sub_resource type="Animation" id="Animation_iywne"]
 resource_name = "move_up"
 length = 2.0
@@ -180,7 +198,13 @@ tracks/0/keys = {
 "values": [Vector2(81, 40), Vector2(81, 105)]
 }
 
-[sub_resource type="Animation" id="Animation_p57ef"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5sy4"]
+_data = {
+&"RESET": SubResource("Animation_p57ef"),
+&"move_up": SubResource("Animation_iywne")
+}
+
+[sub_resource type="Animation" id="Animation_lbhrr"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -192,13 +216,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector2(81, 40)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_u5sy4"]
-_data = {
-&"RESET": SubResource("Animation_p57ef"),
-&"move_up": SubResource("Animation_iywne")
+"values": [Vector2(516, 9)]
 }
 
 [sub_resource type="Animation" id="Animation_lnu2h"]
@@ -215,21 +233,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.18946461),
 "update": 0,
 "values": [Vector2(516, 9), Vector2(590, 9)]
-}
-
-[sub_resource type="Animation" id="Animation_lbhrr"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(516, 9)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_iywne"]
@@ -252,52 +255,64 @@ position = Vector2(9, 22)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(-1, -7)
 zoom = Vector2(4, 4)
+limit_bottom = 200
+limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="Platform2" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Killzone" parent="." instance=ExtResource("3_iywne")]
+position = Vector2(1, 221)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="Coins" type="Node2D" parent="."]
+
+[node name="Coin" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(43, 26)
+
+[node name="Coin2" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(121, -40)
+
+[node name="Coin3" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(93, -81)
+
+[node name="Coin4" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(122, -185)
+
+[node name="Coin5" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(129, 88)
+
+[node name="Coin6" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(194, 89)
+
+[node name="Coin7" parent="Coins" instance=ExtResource("4_lbhrr")]
+position = Vector2(282, 88)
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="Platform2" parent="Platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(121, -26)
 
-[node name="Platform4" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Platform4" parent="Platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(54, -140)
 
-[node name="Platform3" parent="." instance=ExtResource("3_lnu2h")]
+[node name="Platform3" parent="Platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(93, -66)
 
-[node name="MovingPlatform1" parent="." instance=ExtResource("3_lnu2h")]
+[node name="MovingPlatform1" parent="Platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(81, 40)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform1"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MovingPlatform1"]
 libraries = {
 &"": SubResource("AnimationLibrary_u5sy4")
 }
 autoplay = "move_up"
 
-[node name="MovingPlatform2" parent="." instance=ExtResource("3_lnu2h")]
+[node name="MovingPlatform2" parent="Platforms" instance=ExtResource("3_lnu2h")]
 position = Vector2(516, 9)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="MovingPlatform2"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Platforms/MovingPlatform2"]
 libraries = {
 &"": SubResource("AnimationLibrary_iywne")
 }
 autoplay = "move"
-
-[node name="Coin" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(43, 26)
-
-[node name="Coin2" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(121, -40)
-
-[node name="Coin3" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(93, -81)
-
-[node name="Coin4" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(122, -185)
-
-[node name="Coin5" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(129, 88)
-
-[node name="Coin6" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(194, 89)
-
-[node name="Coin7" parent="." instance=ExtResource("4_lbhrr")]
-position = Vector2(282, 88)
