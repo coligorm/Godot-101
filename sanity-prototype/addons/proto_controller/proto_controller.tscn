@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bs72ogkvdd7d6"]
+[gd_scene load_steps=10 format=3 uid="uid://bs72ogkvdd7d6"]
 
 [ext_resource type="Script" uid="uid://7slplv5taiap" path="res://addons/proto_controller/proto_controller.gd" id="1_ucva2"]
 
@@ -18,6 +18,15 @@ height = 1.8
 [sub_resource type="AtlasTexture" id="AtlasTexture_wr06p"]
 
 [sub_resource type="ImageTexture" id="ImageTexture_g2uji"]
+
+[sub_resource type="Animation" id="Animation_g2uji"]
+resource_name = "wakeup"
+length = 1.5
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wr06p"]
+_data = {
+&"wakeup": SubResource("Animation_g2uji")
+}
 
 [node name="ProtoController" type="CharacterBody3D"]
 script = ExtResource("1_ucva2")
@@ -65,6 +74,22 @@ offset_right = 40.0
 offset_bottom = 553.0
 scale = Vector2(2.7599995, 2.6400013)
 
+[node name="wakeup" type="ColorRect" parent="."]
+offset_left = -65.0
+offset_top = -82.0
+offset_right = -25.0
+offset_bottom = -42.0
+scale = Vector2(32.608845, 9.586419)
+color = Color(0.02745098, 0.007843138, 0.007843138, 1)
+
+[node name="wakeup2" type="ColorRect" parent="."]
+offset_left = -57.000004
+offset_top = 286.0
+offset_right = -17.000004
+offset_bottom = 326.0
+scale = Vector2(32.608845, 9.586419)
+color = Color(0.02745098, 0.007843138, 0.007843138, 1)
+
 [node name="LightLevel" type="TextureProgressBar" parent="."]
 offset_left = 533.0
 offset_top = 523.0
@@ -73,3 +98,9 @@ offset_bottom = 563.0
 scale = Vector2(2.5427454, 2.520314)
 texture_under = SubResource("AtlasTexture_wr06p")
 texture_over = SubResource("ImageTexture_g2uji")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../wakeup")
+libraries = {
+&"": SubResource("AnimationLibrary_wr06p")
+}
