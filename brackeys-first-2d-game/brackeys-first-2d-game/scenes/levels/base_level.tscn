@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://cyf2dviprul1i"]
+[gd_scene load_steps=10 format=3 uid="uid://cyf2dviprul1i"]
 
 [ext_resource type="Script" uid="uid://cqqdpv2wuoo73" path="res://scripts/game_manager.gd" id="1_43bxi"]
+[ext_resource type="FontFile" uid="uid://sfbctyjymlwm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_j7gcg"]
 [ext_resource type="Texture2D" uid="uid://cmxeo2y2n3225" path="res://assets/sprites/world_tileset.png" id="3_qhwlw"]
 [ext_resource type="PackedScene" uid="uid://u4bip1tmjwwt" path="res://scenes/player.tscn" id="4_0caop"]
 [ext_resource type="PackedScene" uid="uid://brngxhhdhxqhp" path="res://scenes/killzone.tscn" id="5_bd4s6"]
+[ext_resource type="FontFile" uid="uid://88qfgu5wgteg" path="res://assets/fonts/PixelOperator8.ttf" id="9_j8xgc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lnu2h"]
 texture = ExtResource("3_qhwlw")
@@ -173,6 +175,20 @@ unique_name_in_owner = true
 script = ExtResource("1_43bxi")
 score_goal = 6
 
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+offset_left = 218.0
+offset_top = -221.0
+offset_right = 323.0
+offset_bottom = -165.0
+theme_override_colors/font_color = Color(0.011764706, 0.14901961, 0.34901962, 1)
+theme_override_fonts/font = ExtResource("2_j7gcg")
+theme_override_font_sizes/font_size = 8
+text = "You collected
+x coins"
+horizontal_alignment = 1
+autowrap_mode = 1
+autowrap_trim_flags = 64
+
 [node name="TileMap" type="TileMap" parent="."]
 position = Vector2(2, 4)
 tile_set = SubResource("TileSet_lbhrr")
@@ -191,8 +207,33 @@ limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true
 
+[node name="ScoreCounter" type="HBoxContainer" parent="Player"]
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 8
+
+[node name="Label" type="Label" parent="Player/ScoreCounter"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_j7gcg")
+theme_override_font_sizes/font_size = 8
+text = "10"
+
 [node name="Killzone" parent="." instance=ExtResource("5_bd4s6")]
 position = Vector2(1, 155)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
 shape = SubResource("WorldBoundaryShape2D_p57ef")
+
+[node name="Labels" type="Node" parent="."]
+
+[node name="EndLabel" type="Label" parent="Labels"]
+offset_left = 218.0
+offset_top = -249.0
+offset_right = 323.0
+offset_bottom = -193.0
+theme_override_colors/font_color = Color(0.011764706, 0.14901961, 0.34901962, 1)
+theme_override_fonts/font = ExtResource("9_j8xgc")
+theme_override_font_sizes/font_size = 8
+text = "Congradulations!"
+horizontal_alignment = 1

@@ -15,6 +15,6 @@ func add_point():
 func _process(delta: float) -> void:
 	if score >= score_goal:
 		end_label.text = "Congradulations!\nThe goal was : " + str(score_goal)
-		tile_map.layers
+		var secrets_layer = tile_map.get_layer_name("Secrets")
 	else:
 		end_label.text = "Uh-oh!\nThe goal is : " + str(score_goal)

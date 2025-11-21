@@ -441,6 +441,7 @@ position = Vector2(-8, 85)
 unique_name_in_owner = true
 script = ExtResource("1_plydf")
 score_goal = 6
+total_coins = null
 
 [node name="ScoreLabel" type="Label" parent="GameManager"]
 offset_left = 218.0
