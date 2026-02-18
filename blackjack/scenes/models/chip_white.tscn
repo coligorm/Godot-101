@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://dgs5lj023tlxj"]
+
+[ext_resource type="PackedScene" uid="uid://dvgbd4ku8tq0i" path="res://assets/models/chips/white.glb" id="1_x6fg4"]
+
+[node name="ChipWhite" type="Node3D" unique_id=2059633959]
+
+[node name="white" parent="." unique_id=1140486746 instance=ExtResource("1_x6fg4")]

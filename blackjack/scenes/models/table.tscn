@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://m611r5727omy"]
+
+[ext_resource type="PackedScene" uid="uid://ddt7suvw5e6y2" path="res://assets/models/casino_poker_table.glb" id="1_41s7v"]
+
+[node name="Table" type="Node3D" unique_id=1440450650]
+
+[node name="Sketchfab_Scene" parent="." unique_id=1403761080 instance=ExtResource("1_41s7v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 0, -1)

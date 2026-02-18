@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c6fi0l3oe3krv"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vn8vg"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xqga4"]
+albedo_color = Color(2.7434528e-06, 0.63206327, 0.14874431, 1)
+
+[node name="MainMenu" type="Node3D" unique_id=2087773798]
+
+[node name="Background" type="Node3D" parent="." unique_id=376341207]
+
+[node name="table" type="MeshInstance3D" parent="Background" unique_id=1895605040]
+transform = Transform3D(29.412004, 0, 0, 0, 0.099999964, 0, 0, 0, 23.31, 0, 0, 0)
+mesh = SubResource("BoxMesh_vn8vg")
+surface_material_override/0 = SubResource("StandardMaterial3D_xqga4")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Background" unique_id=1968645870]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 4, 0)

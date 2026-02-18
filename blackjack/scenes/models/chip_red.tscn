@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://cu2k1bfe7mklt"]
+
+[ext_resource type="PackedScene" uid="uid://hyxx7eirdfya" path="res://assets/models/chips/red.glb" id="1_13alt"]
+
+[node name="ChipRed" type="Node3D" unique_id=134550795]
+
+[node name="red" parent="." unique_id=1299266024 instance=ExtResource("1_13alt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 1)
+
+[node name="chips_557" parent="red/Sketchfab_model/033dc28094154bfcb4b5d17249ff925b_fbx/RootNode" parent_id_path=PackedInt32Array(1299266024, 123172884) index="0" unique_id=370135609]
+transform = Transform3D(35.00883, 93.67168, -6.9931543e-06, -1.1920931e-05, 1.1920929e-05, 100, 93.67168, -35.00883, 1.533991e-05, -200, 0, -100)
+
+[editable path="red"]

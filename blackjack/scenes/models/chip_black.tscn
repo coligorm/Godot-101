@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://d4fmokae2sgty"]
+
+[ext_resource type="PackedScene" uid="uid://b4qmbbflrism0" path="res://assets/models/chips/black.glb" id="1_jqchi"]
+
+[node name="BlackChip" unique_id=571131398 instance=ExtResource("1_jqchi")]
+
+[node name="chips_171" parent="Sketchfab_model/033dc28094154bfcb4b5d17249ff925b_fbx/RootNode" parent_id_path=PackedInt32Array(1182694209) index="0" unique_id=2023712625]
+transform = Transform3D(-38.38909, 92.33786, 1.1007529e-05, 0, -1.192093e-05, 100, 92.33786, 38.38909, 4.576336e-06, 0, 0, 0)
