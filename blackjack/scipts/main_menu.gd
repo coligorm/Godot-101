@@ -16,14 +16,16 @@ func _on_button_continue_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_button_settings_pressed() -> void:
-	pass # Replace with function body.
+	$Settings_Popup.show()
+
+func _on_settings_back_pressed() -> void:
+	$Settings_Popup.hide()
 
 func _on_button_about_pressed() -> void:
 	$About_Popup.show()
 
-func _on_button_back_pressed() -> void:
+func _on_about_back_pressed() -> void:
 	$About_Popup.hide()
-
 
 
 

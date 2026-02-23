@@ -199,7 +199,44 @@ Based on youtube video by lukky
 "
 autowrap_mode = 2
 
-[node name="Button_Back" type="Button" parent="Camera3D/UI_MainMenu/About_Popup" unique_id=631440692]
+[node name="About_Back" type="Button" parent="Camera3D/UI_MainMenu/About_Popup" unique_id=631440692]
+layout_mode = 0
+offset_left = 84.0
+offset_top = 548.0
+offset_right = 267.0
+offset_bottom = 592.0
+theme_override_fonts/font = ExtResource("7_1hnlc")
+theme_override_font_sizes/font_size = 32
+text = "Back"
+
+[node name="Settings_Popup" type="ColorRect" parent="Camera3D/UI_MainMenu" unique_id=68137376]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.8627451)
+
+[node name="ColorRect" type="ColorRect" parent="Camera3D/UI_MainMenu/Settings_Popup" unique_id=865666937]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(13.668154, 16.26532)
+color = Color(0, 0, 0, 1)
+
+[node name="Title2" type="Label" parent="Camera3D/UI_MainMenu/Settings_Popup" unique_id=799302057]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 74.0
+offset_right = 484.0
+offset_bottom = 143.0
+theme_override_fonts/font = ExtResource("6_8r73w")
+theme_override_font_sizes/font_size = 59
+text = "Settings"
+
+[node name="Settings_Back" type="Button" parent="Camera3D/UI_MainMenu/Settings_Popup" unique_id=1101499104]
 layout_mode = 0
 offset_left = 84.0
 offset_top = 548.0
@@ -214,4 +251,5 @@ text = "Back"
 [connection signal="pressed" from="Camera3D/UI_MainMenu/MainMenu_Buttons/Button_Settings" to="Camera3D/UI_MainMenu" method="_on_button_settings_pressed"]
 [connection signal="pressed" from="Camera3D/UI_MainMenu/MainMenu_Buttons/Button_About" to="Camera3D/UI_MainMenu" method="_on_button_about_pressed"]
 [connection signal="pressed" from="Camera3D/UI_MainMenu/MainMenu_Buttons/Button_Exit" to="Camera3D/UI_MainMenu" method="_on_button_exit_pressed"]
-[connection signal="pressed" from="Camera3D/UI_MainMenu/About_Popup/Button_Back" to="Camera3D/UI_MainMenu" method="_on_button_back_pressed"]
+[connection signal="pressed" from="Camera3D/UI_MainMenu/About_Popup/About_Back" to="Camera3D/UI_MainMenu" method="_on_about_back_pressed"]
+[connection signal="pressed" from="Camera3D/UI_MainMenu/Settings_Popup/Settings_Back" to="Camera3D/UI_MainMenu" method="_on_settings_back_pressed"]
