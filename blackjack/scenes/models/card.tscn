@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://cwxh07y0hvdr4"]
+
+[ext_resource type="Texture2D" uid="uid://jvfii4kckxpt" path="res://assets/textures/cards/card_clubs_02.png" id="1_5mct5"]
+[ext_resource type="Texture2D" uid="uid://druuhvlumbxly" path="res://assets/textures/cards/card_back.png" id="2_knn54"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gj77s"]
+transparency = 1
+albedo_texture = ExtResource("1_5mct5")
+albedo_texture_force_srgb = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_pgw0c"]
+material = SubResource("StandardMaterial3D_gj77s")
+size = Vector2(1, 1.4)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c45al"]
+transparency = 1
+albedo_texture = ExtResource("2_knn54")
+albedo_texture_force_srgb = true
+
+[sub_resource type="QuadMesh" id="QuadMesh_rtayc"]
+material = SubResource("StandardMaterial3D_c45al")
+size = Vector2(1, 1.4)
+
+[node name="Card" type="Node3D" unique_id=1046503612]
+transform = Transform3D(1.605, 0, 0, 0, 1.605, 0, 0, 0, 1.605, 0, 0, 0)
+
+[node name="Front" type="MeshInstance3D" parent="." unique_id=715306444]
+transform = Transform3D(1.5999999, 0, 0, 0, -4.371139e-08, 2.3000002, 0, -1, -1.005362e-07, 0, 0, 0)
+mesh = SubResource("QuadMesh_pgw0c")
+
+[node name="Back" type="MeshInstance3D" parent="." unique_id=2013776398]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
+mesh = SubResource("QuadMesh_rtayc")
