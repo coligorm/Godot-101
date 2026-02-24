@@ -32,3 +32,32 @@ It has been awhile since I have done Brackey's Godot video, and I havent used Go
     - Some chips did not extract their child nodes. To fix this, select the root node and click **Editable Children**
 
 Not much actual development, but I am very bad at starting, so this is progress. With time, I will be quicker at getting projects initlaised better and quicker
+
+## Day 2 (2hrs):
+
+### Menus
+
+- Created a main menu with poker chips on a table.
+- Attached a simple script to the chips to rotate them:
+    ```
+    @export var turn_speed = 4;
+
+    func _process(delta: float) -> void:
+    	rotation.y += deg_to_rad(turn_speed) * delta;
+    ```
+- Added a control node for the UI Menu
+    - A `VBoxContainer` node with a series of `Button` nodes: New Game, Continue, About, Settings and Exit
+- Added the `pressed()` signal to each menu button
+- `get_tree().quit()` to exit the game
+- Added About and Settings Menu
+- Settings has Sound and Fullscreen
+    - Sound settings are buttons that do nothing (there is no sound in the game to turn on/off)
+    - Fullscreen:
+        ```
+        DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+        ```
+
+In previous game dev projects, i neglected any UI and got straight into the development, so this was not my usual approach.
+I am not very familar with the `Control` Nodes and how to set them up with buttons and signals so this was good practise
+
+> *Note*: I have to fix the allignment of the boxes and texts. They look fine on the windowed view of the screen but not the fullscreen view
