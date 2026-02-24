@@ -163,7 +163,7 @@ offset_bottom = 40.0
 scale = Vector2(13.668154, 16.26532)
 color = Color(0, 0, 0, 1)
 
-[node name="Title2" type="Label" parent="Camera3D/UI_MainMenu/About_Popup" unique_id=25544444]
+[node name="AboutTitle" type="Label" parent="Camera3D/UI_MainMenu/About_Popup" unique_id=25544444]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 74.0
@@ -226,7 +226,7 @@ offset_bottom = 40.0
 scale = Vector2(13.668154, 16.26532)
 color = Color(0, 0, 0, 1)
 
-[node name="Title2" type="Label" parent="Camera3D/UI_MainMenu/Settings_Popup" unique_id=799302057]
+[node name="SettingsTitle" type="Label" parent="Camera3D/UI_MainMenu/Settings_Popup" unique_id=799302057]
 layout_mode = 0
 offset_left = 50.0
 offset_top = 74.0
@@ -235,6 +235,47 @@ offset_bottom = 143.0
 theme_override_fonts/font = ExtResource("6_8r73w")
 theme_override_font_sizes/font_size = 59
 text = "Settings"
+
+[node name="Settings_Buttons" type="VBoxContainer" parent="Camera3D/UI_MainMenu/Settings_Popup" unique_id=877671993]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 89.0
+offset_top = -34.0
+offset_right = 504.0
+offset_bottom = 58.0
+grow_vertical = 2
+
+[node name="Sound_Settings" type="HBoxContainer" parent="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons" unique_id=1847554641]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons/Sound_Settings" unique_id=1675664987]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_1hnlc")
+theme_override_font_sizes/font_size = 32
+text = "Sound :"
+
+[node name="Sound_Button" type="Button" parent="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons/Sound_Settings" unique_id=997467732]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_1hnlc")
+theme_override_font_sizes/font_size = 32
+text = "On"
+
+[node name="Fullscreen_Settings" type="HBoxContainer" parent="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons" unique_id=1038848693]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons/Fullscreen_Settings" unique_id=1002771857]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_1hnlc")
+theme_override_font_sizes/font_size = 32
+text = "Fullscreen :"
+
+[node name="Fullscreen_Button" type="Button" parent="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons/Fullscreen_Settings" unique_id=2042067054]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_1hnlc")
+theme_override_font_sizes/font_size = 32
+text = "Enable"
 
 [node name="Settings_Back" type="Button" parent="Camera3D/UI_MainMenu/Settings_Popup" unique_id=1101499104]
 layout_mode = 0
@@ -252,4 +293,6 @@ text = "Back"
 [connection signal="pressed" from="Camera3D/UI_MainMenu/MainMenu_Buttons/Button_About" to="Camera3D/UI_MainMenu" method="_on_button_about_pressed"]
 [connection signal="pressed" from="Camera3D/UI_MainMenu/MainMenu_Buttons/Button_Exit" to="Camera3D/UI_MainMenu" method="_on_button_exit_pressed"]
 [connection signal="pressed" from="Camera3D/UI_MainMenu/About_Popup/About_Back" to="Camera3D/UI_MainMenu" method="_on_about_back_pressed"]
+[connection signal="pressed" from="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons/Sound_Settings/Sound_Button" to="Camera3D/UI_MainMenu" method="_on_sound_button_pressed"]
+[connection signal="pressed" from="Camera3D/UI_MainMenu/Settings_Popup/Settings_Buttons/Fullscreen_Settings/Fullscreen_Button" to="Camera3D/UI_MainMenu" method="_on_fullscreen_button_pressed"]
 [connection signal="pressed" from="Camera3D/UI_MainMenu/Settings_Popup/Settings_Back" to="Camera3D/UI_MainMenu" method="_on_settings_back_pressed"]
