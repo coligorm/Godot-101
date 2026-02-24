@@ -1,11 +1,12 @@
 [gd_scene format=3 uid="uid://cwxh07y0hvdr4"]
 
-[ext_resource type="Texture2D" uid="uid://jvfii4kckxpt" path="res://assets/textures/cards/card_clubs_02.png" id="1_5mct5"]
-[ext_resource type="Texture2D" uid="uid://druuhvlumbxly" path="res://assets/textures/cards/card_back.png" id="2_knn54"]
+[ext_resource type="Script" uid="uid://cl8bd4ie1fnfy" path="res://scipts/card.gd" id="1_150os"]
+[ext_resource type="Texture2D" uid="uid://jvfii4kckxpt" path="res://assets/textures/cards/card_clubs_02.png" id="2_2ovsh"]
+[ext_resource type="Texture2D" uid="uid://druuhvlumbxly" path="res://assets/textures/cards/card_back.png" id="3_60tki"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gj77s"]
 transparency = 1
-albedo_texture = ExtResource("1_5mct5")
+albedo_texture = ExtResource("2_2ovsh")
 albedo_texture_force_srgb = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_pgw0c"]
@@ -14,7 +15,7 @@ size = Vector2(1, 1.4)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_c45al"]
 transparency = 1
-albedo_texture = ExtResource("2_knn54")
+albedo_texture = ExtResource("3_60tki")
 albedo_texture_force_srgb = true
 
 [sub_resource type="QuadMesh" id="QuadMesh_rtayc"]
@@ -23,6 +24,7 @@ size = Vector2(1, 1.4)
 
 [node name="Card" type="Node3D" unique_id=1046503612]
 transform = Transform3D(1.605, 0, 0, 0, 1.605, 0, 0, 0, 1.605, 0, 0, 0)
+script = ExtResource("1_150os")
 
 [node name="Front" type="MeshInstance3D" parent="." unique_id=715306444]
 transform = Transform3D(1.5999999, 0, 0, 0, -4.371139e-08, 2.3000002, 0, -1, -1.005362e-07, 0, 0, 0)

@@ -67,6 +67,7 @@ I am not very familar with the `Control` Nodes and how to set them up with butto
 ### Cards
 
 - It took me 2 hours to get one single card created as a scene...
+- Most of the time was spent scouring the reddit, youtube and godot forms for answers on how to make a 3D card with no hope... this [video](https://www.youtube.com/watch?v=lnQMKkN-4Ys) gave me some hope. It was more indept on waht i needed but i managed to firgure it out, steps below
 - It is still slightly blurry and not at the resolution that I got from Kenny's Assets...
 - But i have a card...
 
@@ -75,8 +76,8 @@ I am not very familar with the `Control` Nodes and how to set them up with butto
 - Node3D with two child `MeshInstance3D` nodes, one for the front and one for the back
 - Attach a `QuadMesh` and change size to `x=1, y=1.6` for a playing-card ratio
 - Created a new `StandardMaterial3D` for the material
-    - Set the `Albedo` texture to the `card.png` and turn on **Texture Force** (This sharpened the image colour)
-    - Set `Transparency` to `Alpha`
+	- Set the `Albedo` texture to the `card.png` and turn on **Texture Force** (This sharpened the image colour)
+	- Set `Transparency` to `Alpha`
 - Still in the **Inspector** tab, under **Node3D**, Transform the x-rotation (front 90-degrees, back -90-degrees)
 
 > *TODO:* I have to figure out a way for a script to generate each card based on the pngs inside the assets/cards folder instead of manually doing each card as a scene 
