@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://csmbirvv31lcx"]
+
+[ext_resource type="PackedScene" uid="uid://m611r5727omy" path="res://scenes/models/table.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://cwxh07y0hvdr4" path="res://scenes/models/card.tscn" id="2_lnu2h"]
+
+[sub_resource type="Environment" id="Environment_6bivr"]
+background_mode = 1
+
+[node name="Game" type="Node3D" unique_id=896015496]
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1742111555]
+transform = Transform3D(0.96814764, 0.17075875, -0.18311635, 0, 0.7313537, 0.6819984, 0.25038, -0.6602751, 0.70805836, -3.875, 18.215, 10.855)
+visible = false
+
+[node name="World" type="Node3D" parent="." unique_id=1446190961]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World" unique_id=1097197323]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+light_color = Color(0.11372549, 0.1764706, 0.16862746, 1)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World" unique_id=695710173]
+environment = SubResource("Environment_6bivr")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="World" unique_id=89667907]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 25.928001, 0)
+light_color = Color(1, 1, 0.5921569, 1)
+light_energy = 15.897
+spot_range = 36.3
+spot_angle = 45.073402
+
+[node name="Table" parent="." unique_id=1440450650 instance=ExtResource("1_yqjtg")]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 0, 0)
+
+[node name="Card" parent="." unique_id=1046503612 instance=ExtResource("2_lnu2h")]
+transform = Transform3D(1.550311, 0, -0.41540456, 0, 1.605, 0, 0.41540456, 0, 1.550311, -3.6999998, 13.700006, 7.299999)
+
+[node name="Card2" parent="." unique_id=1694396716 instance=ExtResource("2_lnu2h")]
+transform = Transform3D(1.550311, 0, -0.41540456, 0, 1.605, 0, 0.41540456, 0, 1.550311, -1.9, 13.7, 7.8000007)
