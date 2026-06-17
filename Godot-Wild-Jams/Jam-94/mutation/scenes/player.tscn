@@ -143,7 +143,8 @@ script = ExtResource("1_hqtel")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1878063749]
 position = Vector2(0, -32)
 sprite_frames = SubResource("SpriteFrames_sh265")
-animation = &"death"
+animation = &"idle"
+autoplay = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=47589833]
 position = Vector2(0, -16)

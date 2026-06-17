@@ -1,23 +1,16 @@
 extends CharacterBody2D
 
+var can_move : bool = true
 
-const SPEED = 300.0
+const SPEED = 175.0
+const ACCELERATION = 800.0
 
 
 func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
-	var direction := Input.get_axis("move_left", "move_right")
-	var verticle := Input.get_axis("move_down", "move_up")
+	var input_dir := Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	if verticle:
-		velocity.y = direction * SPEED
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
+	var target_velocity = input_dir * SPEED
+	velocity = velocity.move_toward(target_velocity, ACCELERATION * delta)
 
 	move_and_slide()
