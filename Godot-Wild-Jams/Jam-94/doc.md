@@ -58,11 +58,11 @@ I think i will go with idea 1. But strip it down more.
 
 ### Day 1
 
-- [ ] Movement
-- [ ] Attacks
+- [X] Movement
+- [X] Attacks
 - [ ] Enemy movement
-- [ ] Health
-- [ ] Death
+- [X] Health
+- [X] Death
 
 ### Day 2
 
