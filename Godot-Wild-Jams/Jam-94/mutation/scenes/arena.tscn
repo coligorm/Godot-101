@@ -119,11 +119,12 @@ layer_0/tile_data = PackedInt32Array(-458760, 0, 0, -393224, 0, 1, -327688, 0, 2
 layer_1/name = "Details"
 layer_1/tile_data = PackedInt32Array(524287, 393216, 6, 458752, 458752, 6, -458756, 262144, 7, -524285, 262144, 7, -458758, 0, 9, -524283, 0, 9, -196615, 65536, 9, 262137, 65536, 9, -262138, 65536, 268435465, 196614, 65536, 268435465, 458745, 262144, 6, 262148, 458752, 7, 65538, 524288, 6, -131067, 524288, 6, -327682, 589824, 4, -327676, 589824, 5, -6, 458752, 268435463, 196604, 524288, 1342177286, 131065, 524288, 1073741830)
 
-[node name="CharacterBody2D" parent="." unique_id=276586526 instance=ExtResource("2_wl4x5")]
+[node name="player" parent="." unique_id=276586526 instance=ExtResource("2_wl4x5")]
 cooldown_atk = 0.4
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=627064196]
 zoom = Vector2(2.5, 2.5)
 
-[node name="CharacterBody2D2" parent="." unique_id=1375554819 instance=ExtResource("3_olpmc")]
+[node name="mutant" parent="." unique_id=1375554819 node_paths=PackedStringArray("player") instance=ExtResource("3_olpmc")]
 position = Vector2(66, -11)
+player = NodePath("../player")
