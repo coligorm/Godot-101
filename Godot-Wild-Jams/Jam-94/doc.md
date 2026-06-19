@@ -60,7 +60,7 @@ I think i will go with idea 1. But strip it down more.
 
 - [X] Movement
 - [X] Attacks
-- [ ] Enemy movement
+- [x] Enemy movement
 - [X] Health
 - [X] Death
 
