@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://4dpfvb2wqh0q"]
+
+[ext_resource type="Texture2D" uid="uid://uh2rtapmortd" path="res://assets/sprites/Apple.png" id="1_h071m"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7vr8k"]
+radius = 8.0
+
+[node name="Area2D" type="Area2D" unique_id=2112608515]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1397249216]
+texture = ExtResource("1_h071m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1701799964]
+position = Vector2(0.4, 0)
+shape = SubResource("CircleShape2D_7vr8k")

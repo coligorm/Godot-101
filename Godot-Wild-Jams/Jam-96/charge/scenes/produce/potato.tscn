@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://o0sxm3h6iof4"]
+
+[ext_resource type="Texture2D" uid="uid://be1uun262y61c" path="res://assets/sprites/Potato.png" id="1_iwyfe"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lmwfw"]
+radius = 6.4026966
+height = 19.99613
+
+[node name="Area2D" type="Area2D" unique_id=992717245]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1560410887]
+texture = ExtResource("1_iwyfe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=393733753]
+position = Vector2(-1, 1)
+rotation = 0.9076209
+shape = SubResource("CapsuleShape2D_lmwfw")

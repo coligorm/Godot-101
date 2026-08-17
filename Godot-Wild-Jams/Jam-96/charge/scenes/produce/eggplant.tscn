@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dy65w8fqe1dxf"]
+
+[ext_resource type="Texture2D" uid="uid://dr4w25igw34jt" path="res://assets/sprites/Eggplant.png" id="1_npg5y"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_l4pqb"]
+radius = 5.7280498
+height = 17.087646
+
+[node name="Area2D" type="Area2D" unique_id=670191957]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1136331837]
+texture = ExtResource("1_npg5y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=999540461]
+position = Vector2(-1, 3)
+rotation = 0.46184874
+shape = SubResource("CapsuleShape2D_l4pqb")

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dr75j10pxqtto"]
+
+[ext_resource type="Texture2D" uid="uid://bth6y0xvp7j0l" path="res://assets/sprites/bg.png" id="1_bkp1e"]
+
+[node name="Sprite2D" type="Sprite2D" unique_id=1808824230]
+texture = ExtResource("1_bkp1e")

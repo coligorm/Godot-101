@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://qttsjhn5y1fu"]
+
+[ext_resource type="Texture2D" uid="uid://flwioga8ptvb" path="res://assets/sprites/Carrot.png" id="1_btq7l"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elckd"]
+radius = 3.5031185
+height = 21.530014
+
+[node name="Area2D" type="Area2D" unique_id=1899309821]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=113840767]
+texture = ExtResource("1_btq7l")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1032221731]
+position = Vector2(1, -0.99999964)
+rotation = 0.34906584
+shape = SubResource("CapsuleShape2D_elckd")

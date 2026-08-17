@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://tk35y5ic32ln"]
+
+[ext_resource type="Texture2D" uid="uid://bny2v5rvtisg8" path="res://assets/sprites/ShoppingBag.png" id="1_pijwo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pijwo"]
+size = Vector2(16, 23)
+
+[node name="Area2D" type="Area2D" unique_id=200731035]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=521412073]
+texture = ExtResource("1_pijwo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=290256275]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_pijwo")

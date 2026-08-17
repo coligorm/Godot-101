@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bxst15s0qro43"]
+
+[ext_resource type="Texture2D" uid="uid://nqyye2d13r65" path="res://assets/sprites/Pear.png" id="1_dmt2g"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eeymf"]
+radius = 3.0
+height = 10.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2bcob"]
+radius = 8.0
+
+[node name="Area2D" type="Area2D" unique_id=413138574]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=136325145]
+texture = ExtResource("1_dmt2g")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=782373208]
+position = Vector2(0.4, -6)
+shape = SubResource("CapsuleShape2D_eeymf")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." unique_id=86955996]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_2bcob")
