@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://efek46goki1q"]
+[gd_scene format=3 uid="uid://efek46goki1q"]
 
 [ext_resource type="Script" uid="uid://d2mshrdxhvx15" path="res://scripts/coin.gd" id="1_i64fm"]
 [ext_resource type="Texture2D" uid="uid://buk2fxuq51018" path="res://assets/sprites/coin.png" id="1_rwqht"]
@@ -185,26 +185,23 @@ _data = {
 &"pickup": SubResource("Animation_d14el")
 }
 
-[node name="Coin" type="Area2D"]
+[node name="Coin" type="Area2D" unique_id=878847736]
 collision_mask = 2
 script = ExtResource("1_i64fm")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=626739485]
 sprite_frames = SubResource("SpriteFrames_ls27i")
 autoplay = "default"
 frame_progress = 0.8930061
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=609921600]
 shape = SubResource("CircleShape2D_ssuvv")
-disabled = true
 
-[node name="PickupSound" type="AudioStreamPlayer2D" parent="."]
+[node name="PickupSound" type="AudioStreamPlayer2D" parent="." unique_id=1395895988]
 stream = ExtResource("3_11l1o")
 bus = &"SFX"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-&"": SubResource("AnimationLibrary_wnlwo")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1183766585]
+libraries/ = SubResource("AnimationLibrary_wnlwo")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
