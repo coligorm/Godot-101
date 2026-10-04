@@ -16,3 +16,15 @@ func _process(delta: float) -> void:
 		end_label.text = "Congradulations!\nThe goal was : " + str(score_goal)
 	else:
 		end_label.text = "Uh-oh!\nThe goal is : " + str(score_goal)
+
+func level_completed_check() -> bool:
+	if total_coins >= score_goal:
+		level_completed()
+		print("level completed")
+		return true
+	else:
+		print("collect more coins")
+		return false
+	
+func level_completed():
+	pass
