@@ -7,6 +7,9 @@ extends Node
 @onready var end_label: Label = $"../Labels/EndLabel"
 @onready var ui: Label = $"../CanvasLayer/ScoreCounter/UI"
 
+const FILE_PATH = "res://scenes/levels/level"
+const FILE_EXT = ".tscn"
+
 func add_point():
 	total_coins += 1
 	score_label.text = "You collected " + str(total_coins) + " out of " + str(score_goal) + " coins."
@@ -19,7 +22,6 @@ func _process(delta: float) -> void:
 
 func level_completed_check() -> bool:
 	if total_coins >= score_goal:
-		level_completed()
 		print("level completed")
 		return true
 	else:
@@ -27,4 +29,8 @@ func level_completed_check() -> bool:
 		return false
 	
 func level_completed():
-	pass
+	var current_scene_file = get_tree().current_scene.scene_file_path
+	var next_level_number = current_scene_file.to_int() + 1
+	
+	var next_level_path = FILE_PATH + str(next_level_number) + FILE_EXT
+	get_tree().change_scene_to_file(next_level_path)
