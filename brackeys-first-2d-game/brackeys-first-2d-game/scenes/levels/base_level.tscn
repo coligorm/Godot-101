@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cyf2dviprul1i"]
+[gd_scene format=3 uid="uid://cyf2dviprul1i"]
 
 [ext_resource type="Script" uid="uid://cqqdpv2wuoo73" path="res://scripts/game_manager.gd" id="1_43bxi"]
 [ext_resource type="FontFile" uid="uid://sfbctyjymlwm" path="res://assets/fonts/PixelOperator8-Bold.ttf" id="2_j7gcg"]
@@ -168,15 +168,15 @@ sources/0 = SubResource("TileSetAtlasSource_lnu2h")
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_p57ef"]
 
-[node name="BaseLevel" type="Node2D"]
+[node name="BaseLevel" type="Node2D" unique_id=1348486482]
 position = Vector2(-8, 85)
 
-[node name="GameManager" type="Node" parent="."]
+[node name="GameManager" type="Node" parent="." unique_id=2105583919]
 unique_name_in_owner = true
 script = ExtResource("1_43bxi")
 score_goal = 6
 
-[node name="ScoreLabel" type="Label" parent="GameManager"]
+[node name="ScoreLabel" type="Label" parent="GameManager" unique_id=135444897]
 offset_left = 218.0
 offset_top = -221.0
 offset_right = 323.0
@@ -190,7 +190,7 @@ horizontal_alignment = 1
 autowrap_mode = 1
 autowrap_trim_flags = 64
 
-[node name="TileMap" type="TileMap" parent="."]
+[node name="TileMap" type="TileMap" parent="." unique_id=257130718]
 position = Vector2(2, 4)
 tile_set = SubResource("TileSet_lbhrr")
 format = 2
@@ -198,45 +198,52 @@ layer_0/name = "Background"
 layer_1/name = "Accents"
 layer_2/name = "Mid"
 
-[node name="Player" parent="." instance=ExtResource("4_0caop")]
-position = Vector2(9, 22)
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1245678451]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="ScoreCounter" type="HBoxContainer" parent="CanvasLayer" unique_id=695421420]
+offset_right = 204.0
+offset_bottom = 16.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="CoinUI" type="TextureRect" parent="CanvasLayer/ScoreCounter" unique_id=606499966]
+layout_mode = 2
+texture = ExtResource("5_h4ce7")
+expand_mode = 2
+stretch_mode = 1
+
+[node name="UI" type="Label" parent="CanvasLayer/ScoreCounter" unique_id=2045066373]
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.105882354, 0.105882354, 0.105882354, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_j7gcg")
+theme_override_font_sizes/font_size = 8
+text = "0"
+
+[node name="Player" parent="." unique_id=1793060344 instance=ExtResource("4_0caop")]
+position = Vector2(182, 23)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=201916135]
 position = Vector2(-1, -7)
 zoom = Vector2(3.5, 3.5)
 limit_bottom = 200
 limit_smoothed = true
 position_smoothing_enabled = true
 
-[node name="ScoreCounter" type="HBoxContainer" parent="Player"]
-anchors_preset = 10
-anchor_right = 1.0
-offset_left = -327.0
-offset_top = -92.0
-offset_right = -123.0
-offset_bottom = -76.0
-grow_horizontal = 2
-size_flags_horizontal = 8
-
-[node name="CoinUI" type="TextureRect" parent="Player/ScoreCounter"]
-layout_mode = 2
-texture = ExtResource("5_h4ce7")
-
-[node name="UI" type="Label" parent="Player/ScoreCounter"]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_j7gcg")
-theme_override_font_sizes/font_size = 8
-text = "0"
-
-[node name="Killzone" parent="." instance=ExtResource("5_bd4s6")]
+[node name="Killzone" parent="." unique_id=1051547800 instance=ExtResource("5_bd4s6")]
 position = Vector2(1, 155)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Killzone" unique_id=527374128]
+position = Vector2(12, 0)
 shape = SubResource("WorldBoundaryShape2D_p57ef")
 
-[node name="Labels" type="Node" parent="."]
+[node name="Labels" type="Node" parent="." unique_id=391994942]
 
-[node name="EndLabel" type="Label" parent="Labels"]
+[node name="EndLabel" type="Label" parent="Labels" unique_id=1594012554]
 offset_left = 218.0
 offset_top = -249.0
 offset_right = 323.0
