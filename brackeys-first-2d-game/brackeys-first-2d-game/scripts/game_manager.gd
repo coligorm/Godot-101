@@ -13,6 +13,7 @@ const FILE_EXT = ".tscn"
 func add_point():
 	total_coins += 1
 	score_label.text = "You collected " + str(total_coins) + " out of " + str(score_goal) + " coins."
+	ui.text = str(total_coins)
 
 func _process(delta: float) -> void:
 	if total_coins >= score_goal:
