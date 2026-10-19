@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://daidy2mqg812c"]
+[gd_scene format=3 uid="uid://daidy2mqg812c"]
 
 [ext_resource type="Script" uid="uid://6op7xlclfn1s" path="res://scripts/slime.gd" id="1_n6pvg"]
 [ext_resource type="Texture2D" uid="uid://dl7rrfmci7ydg" path="res://assets/sprites/slime_green.png" id="1_p2gj0"]
@@ -43,27 +43,35 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0l8pv"]
 size = Vector2(10, 13)
 
-[node name="Slime" type="Node2D"]
+[node name="Slime" type="Node2D" unique_id=1861758725]
 script = ExtResource("1_n6pvg")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=5322776]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_v5wyi")
 autoplay = "default"
 frame = 1
 frame_progress = 0.31809443
 
-[node name="Killzone" parent="AnimatedSprite2D" instance=ExtResource("2_n6pvg")]
+[node name="Killzone" parent="AnimatedSprite2D" unique_id=854507680 instance=ExtResource("2_n6pvg")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/Killzone" unique_id=1847584315]
 position = Vector2(0, 5.5)
 shape = SubResource("RectangleShape2D_0l8pv")
 
-[node name="RayCastRight" type="RayCast2D" parent="."]
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=1719554530]
 position = Vector2(0, -6)
 target_position = Vector2(8, 0)
 
-[node name="RayCastLeft" type="RayCast2D" parent="."]
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=1057674556]
 position = Vector2(0, -6)
 rotation = -3.1415927
 target_position = Vector2(8, 0)
+
+[node name="RayCastRightDown" type="RayCast2D" parent="." unique_id=1412161588]
+position = Vector2(0, -12)
+target_position = Vector2(11, 12)
+
+[node name="RayCastLeftDown" type="RayCast2D" parent="." unique_id=1560376676]
+position = Vector2(0, -12)
+target_position = Vector2(-11, 12)
